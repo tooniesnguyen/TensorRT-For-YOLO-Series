@@ -28,6 +28,27 @@ pip install nvidia-pyindex
 pip install --upgrade nvidia-tensorrt
 pip install pycuda
 ```
+- If we install `pycuda` get error like this:
+```
+...
+      error: command 'gcc' failed: No such file or directory: 'gcc'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pycuda
+  Building wheel for pytools (setup.py) ... done
+  Created wheel for pytools: filename=pytools-2022.1.12-py2.py3-none-any.whl size=65020 sha256=4d8d7453679b61255198efff71f8f61d62ff905d092e54c6b5b04d0ca0874db1
+  Stored in directory: /tmp/pip-ephem-wheel-cache-vyvv34as/wheels/37/5e/9e/76d7430e116b7cab0016fbabb26b896daae1946a3f7dea9915
+Successfully built pytools
+Failed to build pycuda
+ERROR: Could not build wheels for pycuda, which is required to install pyproject.toml-based projects
+
+```
+
+  - Solution: `conda install -c conda-forge pycuda`
+
+
+
 `Install via  C++`
 
 [By Docker](https://github.com/NVIDIA/TensorRT/blob/main/docker/ubuntu-20.04.Dockerfile)
